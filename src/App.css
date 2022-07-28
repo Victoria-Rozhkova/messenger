@@ -24,6 +24,17 @@
   color: white;
 }
 
+.App-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.Messages {
+  display: flex;
+  flex-direction: column;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -32,6 +43,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
