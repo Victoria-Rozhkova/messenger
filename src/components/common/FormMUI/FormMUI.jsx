@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
+import PropTypes from 'prop-types';
 import SendIcon from '@mui/icons-material/Send';
 import style from './FormMUI.module.css';
 
@@ -32,4 +33,8 @@ export const FormMUI = ({ addMessage }) => {
       </Button>
     </form>
   );
+};
+
+FormMUI.propTypes = {
+  addMessage: PropTypes.func,
 };

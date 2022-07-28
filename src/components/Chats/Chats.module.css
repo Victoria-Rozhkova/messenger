@@ -1,6 +1,10 @@
 .chats {
   grid-area: chatlist;
   padding-inline-start: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: fixed;
+  top: 115px;
 }
 
 .chats li {

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import PropTypes from 'prop-types';
 
 export const Form = ({ addMessage }) => {
   const [value, setValue] = useState('');
@@ -27,4 +28,8 @@ export const Form = ({ addMessage }) => {
       <button>Send</button>
     </form>
   );
+};
+
+Form.propTypes = {
+  addMessage: PropTypes.func,
 };

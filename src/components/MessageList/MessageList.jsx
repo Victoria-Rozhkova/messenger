@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Message } from "./Message/Message";
 import style from './MessageList.module.css';
 
@@ -10,4 +11,9 @@ export const MessageList = ({ messageList }) => {
       })}
     </div>
   );
+};
+
+
+MessageList.propTypes = {
+  messageList: PropTypes.array,
 };

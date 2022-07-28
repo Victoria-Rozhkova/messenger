@@ -3,7 +3,7 @@
   display: grid;
   grid-template-areas:
     "link link link"
-    "chatlist line messages";
+    "chatlist messages messages";
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
@@ -11,16 +11,22 @@
   margin: 50px auto;
   height: 550px;
   background: white;
-  padding: 20px;
   overflow: auto;
   border-radius: 12px;
-  gap: 10px;
-  grid-template-rows: 50px;
+  grid-template-rows: 1fr 9fr;
+  grid-template-columns: 1fr 2fr;
   border: solid 4px rgb(34, 120, 233);
 }
 
 .Link {
   grid-area: link;
+  outline: solid 1px rgb(0 0 0 / 23%);
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .Link a {
@@ -34,11 +40,6 @@
   color: rgb(3, 40, 88);
 }
 
-.line {
-  grid-area: line;
-}
-
-
 .App-content {
   display: flex;
   justify-content: space-between;
@@ -48,4 +49,6 @@
 .Messages {
   display: flex;
   flex-direction: column;
+  color: white;
+  background: radial-gradient(circle, rgba(115, 57, 170, 0.7567401960784313) 0%, rgba(7, 137, 150, 0.8575805322128851) 49%, rgba(139, 134, 182, 0.8323704481792717) 74%, rgba(0, 212, 255, 0.7595413165266106) 100%);
 }

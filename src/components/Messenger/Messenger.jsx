@@ -11,7 +11,7 @@ export const Messenger = () => {
   const endMessage = useRef();
 
   const { chatId } = useParams();
-  console.log('messageList[chatId][messageList[chatId]] : ', messageList[chatId][messageList[chatId]]);
+
   const sendMessage = (author, text) => {
     return { id: Date.now(), author: author, text: text };
   };
@@ -43,7 +43,6 @@ export const Messenger = () => {
   }, [messageList]);
   return (
     <div className="App-content">
-      <hr className="line" />
       <div className="Messages">
         <MessageList messageList={messageList[chatId]} />
         <div ref={endMessage} />
