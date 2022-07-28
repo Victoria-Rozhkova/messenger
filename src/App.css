@@ -1,50 +1,51 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "link link link"
+    "chatlist line messages";
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  width: 400px;
+  margin: 50px auto;
+  height: 550px;
+  background: white;
+  padding: 20px;
+  overflow: auto;
+  border-radius: 12px;
+  gap: 10px;
+  grid-template-rows: 50px;
+  border: solid 4px rgb(34, 120, 233);
 }
+
+.Link {
+  grid-area: link;
+}
+
+.Link a {
+  text-decoration: none;
+  color: rgb(34, 120, 233);
+  font-size: 30px;
+  transition: all .2s;
+}
+
+.Link a:hover {
+  color: rgb(3, 40, 88);
+}
+
+.line {
+  grid-area: line;
+}
+
 
 .App-content {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  grid-area: messages;
 }
 
 .Messages {
   display: flex;
   flex-direction: column;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
