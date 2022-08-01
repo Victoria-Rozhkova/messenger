@@ -1,14 +1,26 @@
-.chats {
-  grid-area: chatlist;
-  padding-inline-start: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+.chatListFixed {
   position: fixed;
   top: 115px;
 }
 
+.chatListFixed input {
+  width: 115px;
+}
+
+.chatListFixed .inputTextField {
+  margin-left: 8px;
+}
+
+.chats {
+  grid-area: chatlist;
+  padding-inline-start: 0;
+  margin-left: 20px;
+}
+
 .chats li {
   list-style-type: none;
+  display: flex;
+  align-items: center;
 }
 
 .chats li a {
@@ -19,4 +31,12 @@
 
 .chats li a:hover {
   color: gray;
+}
+
+.chats li button {
+  display: none;
+}
+
+.chats li:hover button {
+  display: flex;
 }
