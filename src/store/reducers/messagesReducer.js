@@ -14,6 +14,17 @@ export const messagesReducer = (state = initialState, action) => {
         ...state,
         messages: { ...state.messages, ...action.payload },
       };
+    case ADD_MESSAGE:
+      return {
+        ...state,
+        messages: {
+          ...state.messages,
+          [action.payload.chatId]: [
+            ...state.messages[action.payload.chatId],
+            action.payload.message,
+          ],
+        },
+      };
     default:
       return state;
   }

@@ -23,22 +23,22 @@ export const Messenger = () => {
 
   const handleAddMessage = (text) => {
     const newMessage = sendMessage(AUTHORS.Me, text);
-    dispatch(addMessage(newMessage));
+    dispatch(addMessage(newMessage, chatId));
   };
 
-  // useEffect(() => {
-  //   let timeOut;
-  //   endMessage.current?.scrollIntoView();
-  //   if (messageList[chatId][messageList[chatId]?.length - 1]?.author === AUTHORS.Me) {
-  //     timeOut = setTimeout(() => {
-  //       const robotMessage = sendMessage(AUTHORS.Bot, "I am a Bot");
-  //       dispatch(addMessage(robotMessage));
-  //     }, 1000);
-  //   }
-  //   return () => {
-  //     clearTimeout(timeOut);
-  //   };
-  // }, [messageList]);
+  useEffect(() => {
+    let timeOut;
+    endMessage.current?.scrollIntoView();
+    if (messageList[chatId][messageList[chatId]?.length - 1]?.author === AUTHORS.Me) {
+      timeOut = setTimeout(() => {
+        const robotMessage = sendMessage(AUTHORS.Bot, "I am a Bot");
+        dispatch(addMessage(robotMessage, chatId));
+      }, 1000);
+    }
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [messageList]);
 
   return (
     <div className="App-content">
