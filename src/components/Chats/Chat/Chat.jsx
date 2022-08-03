@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export const Chat = ({ chatName, chatId, deleteChat }) => {
+export const Chat = ({ chatName, chatId, deleteChatThunk }) => {
 
   return <li>
     <Link to={`/chats/${chatId}`}>{chatName}</Link>
-    <IconButton onClick={() => deleteChat(chatId)} color="primary" aria-label="delete" size="small">
+    <IconButton onClick={() => deleteChatThunk(chatId)} color="primary" aria-label="delete" size="small">
       <DeleteIcon fontSize="inherit" />
     </IconButton></li>;
 };

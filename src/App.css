@@ -48,6 +48,7 @@
 
 .Messages {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   color: white;
   background: radial-gradient(circle, rgba(115, 57, 170, 0.7567401960784313) 0%, rgba(7, 137, 150, 0.8575805322128851) 49%, rgba(139, 134, 182, 0.8323704481792717) 74%, rgba(0, 212, 255, 0.7595413165266106) 100%);

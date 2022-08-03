@@ -1,6 +1,7 @@
 import {
   ADD_MESSAGE,
   CREATE_DIALOG,
+  DELETE_DIALOG,
 } from "../actions/messages/messagesActions";
 
 const initialState = {
@@ -14,6 +15,10 @@ export const messagesReducer = (state = initialState, action) => {
         ...state,
         messages: { ...state.messages, ...action.payload },
       };
+    case DELETE_DIALOG:
+      const copyState = { ...state };
+      delete copyState.messages[action.payload];
+      return copyState;
     case ADD_MESSAGE:
       return {
         ...state,

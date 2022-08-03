@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import style from './Chats.module.css';
 import { TextField } from "@mui/material";
 
-export const Chats = ({ chatList, addChat, deleteChat, createDialog }) => {
+export const Chats = ({ chatList, addChatThunk, deleteChatThunk, createDialog }) => {
   const [value, setValue] = useState('');
 
   const changeValue = (e) => {
@@ -13,11 +13,8 @@ export const Chats = ({ chatList, addChat, deleteChat, createDialog }) => {
   const submit = (e) => {
     e.preventDefault();
     if (value !== "") {
-      const id = Date.now().toString();
-      const messages = { [id]: [] };
-      addChat(id, value);
-      createDialog(messages);
-      setValue('');
+      addChatThunk(value);
+      setValue("");
     }
   };
   return (
@@ -25,7 +22,7 @@ export const Chats = ({ chatList, addChat, deleteChat, createDialog }) => {
       <div className={style.chatListFixed}>
         <ul className={style.chats}>
           {chatList.map(chat => {
-            return <Chat key={chat.id} chatId={chat.id} chatName={chat.name} deleteChat={deleteChat} />;
+            return <Chat key={chat.id} chatId={chat.id} chatName={chat.name} deleteChatThunk={deleteChatThunk} />;
           })}
         </ul>
         <form onSubmit={submit} >
