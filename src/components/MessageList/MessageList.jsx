@@ -13,7 +13,6 @@ export const MessageList = ({ messageList }) => {
   );
 };
 
-
 MessageList.propTypes = {
   messageList: PropTypes.array,
 };
