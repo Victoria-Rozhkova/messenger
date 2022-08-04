@@ -1,13 +1,8 @@
 .App {
-  text-align: center;
-  display: grid;
-  grid-template-areas:
-    "link link link"
-    "chatlist messages messages";
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
-  width: 400px;
+  width: 500px;
   margin: 50px auto;
   height: 550px;
   background: white;
@@ -19,14 +14,16 @@
 }
 
 .Link {
-  grid-area: link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   outline: solid 1px rgb(0 0 0 / 23%);
   position: sticky;
   top: 0;
   background: white;
   padding: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  gap: 5px;
+  color: rgb(34, 120, 233);
 }
 
 .Link a {
@@ -37,19 +34,25 @@
 }
 
 .Link a:hover {
-  color: rgb(3, 40, 88);
+  opacity: 0.7;
 }
 
 .App-content {
   display: flex;
-  justify-content: space-between;
-  grid-area: messages;
+  justify-content: flex-end;
+  min-height: 490px;
 }
 
 .Messages {
+  width: 305px;
   display: flex;
+  text-align: center;
   justify-content: space-between;
   flex-direction: column;
   color: white;
   background: radial-gradient(circle, rgba(115, 57, 170, 0.7567401960784313) 0%, rgba(7, 137, 150, 0.8575805322128851) 49%, rgba(139, 134, 182, 0.8323704481792717) 74%, rgba(0, 212, 255, 0.7595413165266106) 100%);
+}
+
+.Link .active {
+  color: rgb(3, 40, 88);
 }

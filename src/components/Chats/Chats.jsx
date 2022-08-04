@@ -25,7 +25,7 @@ export const Chats = ({ chatList, addChatThunk, deleteChatThunk, createDialog })
             return <Chat key={chat.id} chatId={chat.id} chatName={chat.name} deleteChatThunk={deleteChatThunk} />;
           })}
         </ul>
-        <form onSubmit={submit} >
+        <form className={style.form} onSubmit={submit} >
           <TextField onChange={changeValue} className={style.inputTextField} id="standard-basic" label="New chat" variant="standard" value={value} />
         </form>
       </div>
