@@ -1,8 +1,10 @@
 import React from "react";
 import { logOut } from "../../services/firebase";
 import style from './Profile.module.css';
+import user from '../../img/user.png';
 
 export const Profile = () => {
+  const userName = `User-${Date.now()}`;
   const handleLogout = async () => {
     try {
       await logOut();
@@ -12,7 +14,10 @@ export const Profile = () => {
   };
   return (
     <div className={style.profile}>
-      <h2>Profile</h2> <button onClick={handleLogout}>Logout</button>
+      <h2>Profile</h2>
+      <img src={user} alt="user" />
+      <span>{userName}</span>
+      <button className={style.btnLogin} onClick={handleLogout}>Logout</button>
     </div>
   );
 };

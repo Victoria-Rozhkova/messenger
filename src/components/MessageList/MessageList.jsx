@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Message } from "./Message/Message";
 import style from './MessageList.module.css';
 
-export const MessageList = ({ messageList }) => {
+export const MessageList = ({ messages }) => {
   return (
     <div className={style.messages}>
-      {messageList.map(msg => {
+      {messages.map(msg => {
         return <Message key={msg.id} text={msg.text} author={msg.author} />;
       })}
     </div>
@@ -14,5 +14,5 @@ export const MessageList = ({ messageList }) => {
 };
 
 MessageList.propTypes = {
-  messageList: PropTypes.array,
+  messages: PropTypes.array,
 };

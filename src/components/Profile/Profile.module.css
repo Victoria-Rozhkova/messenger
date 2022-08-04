@@ -1,0 +1,24 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile img {
+  border-radius: 40px;
+}
+
+.btnLogin {
+  padding: 10px 20px;
+  margin: 15px;
+  background: rgb(34, 120, 233);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnLogin:hover {
+  opacity: 0.8;
+}

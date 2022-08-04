@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import style from './Chats.module.css';
 import { TextField } from "@mui/material";
 
-export const Chats = ({ chatList, addChatThunk, deleteChatThunk, createDialog }) => {
+export const Chats = ({ chatList, addChat, deleteChatThunk }) => {
   const [value, setValue] = useState('');
 
   const changeValue = (e) => {
@@ -13,7 +13,7 @@ export const Chats = ({ chatList, addChatThunk, deleteChatThunk, createDialog })
   const submit = (e) => {
     e.preventDefault();
     if (value !== "") {
-      addChatThunk(value);
+      addChat(value);
       setValue("");
     }
   };

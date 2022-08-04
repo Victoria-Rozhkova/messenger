@@ -34,8 +34,10 @@ export const Router = () => {
         <Route path="/profile" element={<PrivateRoute authed={authed} />}>
           <Route path="" element={<Profile />} />
         </Route>
-        <Route path="/chats" element={<ChatsContainer />}>
-          <Route path=":chatId" element={<MessengerContainer />} />
+        <Route path="/chats" element={<PrivateRoute authed={authed} />}>
+          <Route path="/chats" element={<ChatsContainer />}>
+            <Route path=":chatId" element={<MessengerContainer />} />
+          </Route>
         </Route>
         <Route path="/" element={<PublicRoute authed={authed} />}>
           <Route path="" element={<Login />} />

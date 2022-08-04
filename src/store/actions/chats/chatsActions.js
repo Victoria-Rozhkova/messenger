@@ -1,25 +1,23 @@
-import { createDialog, deleteDialog } from "../messages/messagesActions";
+import { remove, set } from "firebase/database";
+import { chatsRefById, getMessagesRefById } from "../../../services/firebase";
 
-export const ADD_CHAT = "CHATS::ADD_CHAT";
-export const DELETE_CHAT = "CHATS::DELETE_CHAT";
+export const GET_CHATS = "CHATS::GET_CHATS";
 
-export const addChat = (id, chatName) => ({
-  type: ADD_CHAT,
-  payload: { id, chatName },
-});
-export const deleteChat = (id) => ({
-  type: DELETE_CHAT,
-  payload: id,
+export const getChats = (chats) => ({
+  type: GET_CHATS,
+  payload: chats,
 });
 
-export const addChatThunk = (text) => (dispatch) => {
+export const getChatsThunk = (chats) => (dispatch) => {
+  dispatch(getChats(chats));
+};
+
+export const addChatThunk = (chatName) => (dispatch) => {
   const id = Date.now().toString();
-  const messages = { [id]: [] };
-  dispatch(addChat(id, text));
-  dispatch(createDialog(messages));
+  set(chatsRefById(id), { id: id, name: chatName });
 };
 
 export const deleteChatThunk = (id) => (dispatch) => {
-  dispatch(deleteChat(id));
-  dispatch(deleteDialog(id));
+  set(chatsRefById(id), null); // or remove(chatsRefById(id))
+  remove(getMessagesRefById(id));
 };

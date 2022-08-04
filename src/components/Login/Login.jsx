@@ -57,7 +57,7 @@ export const Login = ({ isSignUp }) => {
           <div><input type="password" id="pass" placeholder="password" value={password} onChange={handleOnChangePassword} /></div>
         </label>
         {error && <span>{error}</span>}
-        <button>Login</button>
+        <button className={style.btnLogin}>Login</button>
       </form>
     </div>
   );
