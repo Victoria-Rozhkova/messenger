@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Messenger
+![image](https://github.com/Victoria-Rozhkova/messenger/blob/preview/preview.JPG)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
