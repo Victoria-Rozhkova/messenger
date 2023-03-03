@@ -1,5 +1,5 @@
 import { remove, set } from "firebase/database";
-import { chatsRefById, getMessagesRefById } from "../../../services/firebase";
+import { chatsRefById, getMessagesRefById } from "../../services/firebase";
 
 export const GET_CHATS = "CHATS::GET_CHATS";
 

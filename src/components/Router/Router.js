@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, BrowserRouter, NavLink } from "react-router-dom";
 import "../../App.css";
-import ChatsContainer from "../Chats/ChatsContainer";
-import MessengerContainer from "../Messenger/MessengerContainer";
 import { Profile } from "../Profile/Profile";
-import "../../App.css";
 import { Login } from "../Login/Login";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../services/firebase";
+import { Chats } from "../Chats/Chats";
+import { Messenger } from "../Messenger/Messenger";
 
 export const Router = () => {
   const [authed, setAuthed] = useState(false);
@@ -35,8 +34,8 @@ export const Router = () => {
           <Route path="" element={<Profile />} />
         </Route>
         <Route path="/chats" element={<PrivateRoute authed={authed} />}>
-          <Route path="/chats" element={<ChatsContainer />}>
-            <Route path=":chatId" element={<MessengerContainer />} />
+          <Route path="/chats" element={<Chats />}>
+            <Route path=":chatId" element={<Messenger />} />
           </Route>
         </Route>
         <Route path="/" element={<PublicRoute authed={authed} />}>

@@ -1,10 +1,10 @@
 import React from "react";
 import { logOut } from "../../services/firebase";
 import style from './Profile.module.css';
-import user from '../../img/user.png';
+import user from '../../assets/images/user.png';
 
 export const Profile = () => {
-  const userName = `User-${Date.now()}`;
+  const userName = `User`;
   const handleLogout = async () => {
     try {
       await logOut();
