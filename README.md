@@ -6,6 +6,8 @@
 - Если не вошли в аккаунт, писать сообщения и видеть чаты нельзя
 - Можно добавлять/удалять чаты
 - Можно писать сообщения в чатах, на каждое сообщение через секунду отвечает Бот
+- Для стилей использован [MaterialUI](https://mui.com/)
+- Написаны небольшие unit тесты
 
 ![image](https://github.com/Victoria-Rozhkova/messenger/blob/preview/preview.JPG)
 
@@ -14,3 +16,5 @@
 ### `npm install`
 
 ### `npm start`
+
+**Стек: react, redux, react-router, redux-thunk, firebase-auth, redux-persist, firebase-realtime-database**

@@ -9,9 +9,11 @@ import { Login } from "components/Login/Login";
 import { Profile } from "components/Profile/Profile";
 import { Chats } from "components/Chats/Chats";
 import { Messenger } from "components/Messenger/Messenger";
+import { Loading } from "components/Loading/Loading";
 
 export const Router = () => {
   const [authed, setAuthed] = useState(false);
+  const [initialization, setInitialization] = useState(false);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -19,6 +21,7 @@ export const Router = () => {
       } else {
         setAuthed(false);
       }
+      setInitialization(true);
     });
     return unsubscribe;
   }, []);
@@ -29,20 +32,24 @@ export const Router = () => {
         <NavLink to="/profile">Profile</NavLink>|
         <NavLink to="/chats"> Chats</NavLink>
       </div>
-      <Routes>
-        <Route path="/profile" element={<PrivateRoute authed={authed} />}>
-          <Route path="" element={<Profile />} />
-        </Route>
-        <Route path="/chats" element={<PrivateRoute authed={authed} />}>
-          <Route path="/chats" element={<Chats />}>
-            <Route path=":chatId" element={<Messenger />} />
+      {initialization ? (
+        <Routes>
+          <Route path="/profile" element={<PrivateRoute authed={authed} />}>
+            <Route path="" element={<Profile />} />
           </Route>
-        </Route>
-        <Route path="/" element={<PublicRoute authed={authed} />}>
-          <Route path="" element={<Login />} />
-          <Route path="/signup" element={<Login isSignUp />} />
-        </Route>
-      </Routes>
+          <Route path="/chats" element={<PrivateRoute authed={authed} />}>
+            <Route path="/chats" element={<Chats />}>
+              <Route path=":chatId" element={<Messenger />} />
+            </Route>
+          </Route>
+          <Route path="/" element={<PublicRoute authed={authed} />}>
+            <Route path="" element={<Login />} />
+            <Route path="/signup" element={<Login isSignUp />} />
+          </Route>
+        </Routes>
+      ) : (
+        <Loading />
+      )}
     </BrowserRouter>
   );
 };
