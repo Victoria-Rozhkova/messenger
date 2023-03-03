@@ -1,6 +1,6 @@
 import { push } from "firebase/database";
-import { getMessagesRefById } from "../../services/firebase";
-import { AUTHORS } from "../../utils/constants";
+import { getMessagesRefById } from "services/firebase";
+import { AUTHORS } from "utils/constants";
 
 export const ADD_MESSAGE = "MESSAGES::ADD_MESSAGE";
 export const GET_MESSAGES = "MESSAGES::GET_MESSAGES";

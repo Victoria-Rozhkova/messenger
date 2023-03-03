@@ -1,4 +1,4 @@
-import { GET_CHATS } from "../actions/chatsActions";
+import { GET_CHATS } from "store/actions/chatsActions";
 
 const initialState = {
   chats: [],

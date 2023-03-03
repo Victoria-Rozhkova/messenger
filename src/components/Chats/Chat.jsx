@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
 import { IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { deleteChatThunk } from "../../store/actions/chatsActions";
+import { deleteChatThunk } from "store/actions/chatsActions";
 
 export const Chat = ({ chatName, chatId }) => {
 

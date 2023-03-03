@@ -1,4 +1,4 @@
-import { GET_MESSAGES } from "../actions/messagesActions";
+import { GET_MESSAGES } from "store/actions/messagesActions";
 
 const initialState = {
   messages: [],

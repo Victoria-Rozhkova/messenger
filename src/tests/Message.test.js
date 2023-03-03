@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Message } from "../Message";
+import { Message } from "components/MessageList/Message";
 
 describe("Message tests", () => {
   it("render author & text", () => {

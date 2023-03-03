@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { Chat } from "./Chat";
 import { Outlet } from "react-router-dom";
-import style from './Chats.module.css';
-import { TextField } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { getChatList } from "../../store/selectors/chats.selectors";
+import { TextField } from "@mui/material";
 import { onValue } from "firebase/database";
-import { chatsRef } from "../../services/firebase";
-import { addChatThunk, getChatsThunk } from "../../store/actions/chatsActions";
+import { Chat } from "./Chat";
+import { addChatThunk, getChatsThunk } from "store/actions/chatsActions";
+import { getChatList } from "store/selectors/chats.selectors";
+import { chatsRef } from "services/firebase";
+import style from './Chats.module.css';
 
 export const Chats = () => {
   const [value, setValue] = useState('');

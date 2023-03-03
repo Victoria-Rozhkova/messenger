@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { AddMessageForm } from "../AddMessageForm/AddMessageForm";
 import { MessageList } from "../MessageList/MessageList";
-import '../../App.css';
-import { useDispatch, useSelector } from "react-redux";
-import { getMessageList } from "../../store/selectors/messages.selectors";
+import 'App.css';
 import { onValue } from "firebase/database";
-import { getMessagesRefById } from "../../services/firebase";
-import { addMessageThunk, getMessagesThunk } from "../../store/actions/messagesActions";
-import { useParams } from "react-router-dom";
+import { getMessageList } from "store/selectors/messages.selectors";
+import { getMessagesRefById } from "services/firebase";
+import { addMessageThunk, getMessagesThunk } from "store/actions/messagesActions";
 
 export const Messenger = () => {
   const { chatId } = useParams();
@@ -30,7 +30,7 @@ export const Messenger = () => {
       dispatch(getMessagesThunk(msgs));
     });
     return unsubscribe;
-  }, [chatId]);
+  }, [chatId, dispatch]);
 
   const handleAddMessage = (text) => {
     dispatch(addMessageThunk(text, chatId));

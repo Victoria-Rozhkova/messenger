@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { login, signUp } from "../../services/firebase";
+import { login, signUp } from "services/firebase";
 import style from './Login.module.css';
 
 export const Login = ({ isSignUp }) => {

@@ -1,8 +1,4 @@
-import {
-  getMessages,
-  getMessagesThunk,
-  GET_MESSAGES,
-} from "../messages/messagesActions";
+const { GET_MESSAGES, getMessages, getMessagesThunk } = require("store/actions/messagesActions");
 
 describe("getMessages tests", () => {
   it("returns obj with type and payload", () => {

@@ -1,7 +1,7 @@
 import React from "react";
-import { logOut } from "../../services/firebase";
 import style from './Profile.module.css';
-import user from '../../assets/images/user.png';
+import user from 'assets/images/user.png';
+import { logOut } from "services/firebase";
 
 export const Profile = () => {
   const userName = `User`;

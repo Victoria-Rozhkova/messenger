@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, BrowserRouter, NavLink } from "react-router-dom";
-import "../../App.css";
-import { Profile } from "../Profile/Profile";
-import { Login } from "../Login/Login";
+import "App.css";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../services/firebase";
-import { Chats } from "../Chats/Chats";
-import { Messenger } from "../Messenger/Messenger";
+import { auth } from "services/firebase";
+import { Login } from "components/Login/Login";
+import { Profile } from "components/Profile/Profile";
+import { Chats } from "components/Chats/Chats";
+import { Messenger } from "components/Messenger/Messenger";
 
 export const Router = () => {
   const [authed, setAuthed] = useState(false);

@@ -1,4 +1,4 @@
-import { getChats, getChatsThunk, GET_CHATS } from "../chats/chatsActions";
+const { GET_CHATS, getChats, getChatsThunk } = require("store/actions/chatsActions");
 
 describe("getChats tests", () => {
   it("returns obj with type and payload", () => {
